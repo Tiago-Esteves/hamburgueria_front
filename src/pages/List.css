@@ -1,0 +1,36 @@
+.titulo{
+    font-size: 2em;
+    margin-bottom: 16px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 16px;
+    margin-bottom: 5px;
+    
+    
+}
+
+.prod-table{
+    justify-self: center;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.prod-table th,
+.prod-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.prod-table th {
+    background-color: #585050;
+}

@@ -1,0 +1,22 @@
+.form-container {
+    max-width: 600px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    align-self: center;
+    justify-content: center;
+}
+
+.list-ingredientes {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
