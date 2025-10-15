@@ -3,7 +3,7 @@ import "./Criar.css";
 import * as ingredienteService from '../services/ingredienteService';
 import type { Ingrediente } from "../services/ingredienteService";
 
-const CriarIngredienteComponent: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const CriarIngredienteComponent: React.FC<{ onClose: () => void, onCreated: () => void }> = ({ onClose, onCreated }) => {
     const [nome, setNome] = React.useState("");
     const [preco, setPreco] = React.useState(0);
 
@@ -14,6 +14,8 @@ const CriarIngredienteComponent: React.FC<{ onClose: () => void }> = ({ onClose 
             await ingredienteService.createIngrediente(novoIngrediente);
             console.log("Criar Ingrediente:", { nome, preco });
             onClose();
+            onCreated();
+            alert("Ingrediente criado com sucesso!");
         } catch (error) {
             console.error("Erro ao criar ingrediente:", error);
         }
