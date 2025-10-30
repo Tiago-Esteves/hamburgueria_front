@@ -9,51 +9,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
     width: 100vw;
-    min-height: 100vh; /* use min-height para evitar problemas */
+    height: 100vh; /* use min-height para evitar problemas */
     gap: 16px;
     padding: 16px;
     box-sizing: border-box;
 }
-
-/* table wrapper: permite scroll horizontal em telas estreitas */
-.table-wrapper {
+.cards-container {
+    display: grid;
+    gap: 12px;
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-}
-
-/* tabela: keep desktop layout */
-.prod-table {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    min-width: 640px; /* força scroll em telas menores */
-}
-
-/* sticky header improves usability on long lists */
-.prod-table thead th {
-    position: sticky;
-    top: 0;
-    background: #585050;
-    z-index: 2;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-}
-
-.prod-table th,
-.prod-table td {
-    border: 1px solid #ccc;
-    padding: 12px 8px;
+    max-width: 600px;
 }
 
 /* cards view (mobile) - hidden by default on desktop */
-.prod-cards {
-    display: none;
-    width: 100%;
-    gap: 12px;
-}
+
 
 /* product card style for mobile */
 .produto-card {
@@ -63,6 +34,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.04);
+    width: 100%;
 }
 
 .produto-card .card-header h3 {
@@ -73,6 +45,13 @@
 .card-row {
     font-size: 0.95rem;
     margin-bottom: 6px;
+}
+
+.div-prices {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    
 }
 
 .muted {
@@ -98,6 +77,8 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,9 +86,9 @@
     z-index: 10000;
 }
 .modal-content {
-    background: #fff;
+    background: #272626;
     padding: 20px;
-    border-radius: 8px;
+    
     max-width: 800px;
     width: 100%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -116,8 +97,11 @@
 /* Responsive breakpoints */
 @media (max-width: 720px) {
     /* switch to card layout on small screens */
-    .prod-table { display: none; }
-    .prod-cards { display: grid; grid-template-columns: 1fr; }
+    .prod-div {
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 12px;
+    }
 
     /* modal becomes full-screen-ish on phones */
     .modal-content {

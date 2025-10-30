@@ -1,27 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import HeaderComponent from "../../components/header/HeaderComponent";
 
 const HomePage: React.FC = () => {
     const navigate = useNavigate();
 
     const locked = (label: string) => ({
-        "aria-disabled": "true",
-        title: "Em breve — " + label,
+        "aria-disabled": true,                 // booleano
+        title: `Em breve — ${label}`,
         onClick: (e: React.MouseEvent) => e.preventDefault(),
+        tabIndex: -1,                          // não focalizável
     });
 
     return (
         <div className="home-page">
-            <header className="home-header">
-                <div className="brand">
-                    <div className="logo">🍔</div>
-                    <div>
-                        <h1>Hamburgueria</h1>
-                        <p className="subtitle">Painel de controle</p>
-                    </div>
-                </div>
-            </header>
+            <HeaderComponent />
 
             <main className="home-main">
                 <h2 className="welcome">Bem-vindo</h2>
@@ -30,14 +24,14 @@ const HomePage: React.FC = () => {
                 <div className="home-grid">
                     <div className="action-card">
                         <button onClick={() => navigate("/ingredientes")} aria-label="Ver Ingredientes">
-                            Ver Ingredientes
+                            Ingredientes
                         </button>
                         <small>Adicionar, editar e listar ingredientes</small>
                     </div>
 
                     <div className="action-card">
                         <button onClick={() => navigate("/produtos")} aria-label="Ver Produtos">
-                            Ver Produtos
+                            Produtos
                         </button>
                         <small>Gerenciar produtos e composições</small>
                     </div>
@@ -53,7 +47,7 @@ const HomePage: React.FC = () => {
                     </div>
 
                     <div className="action-card locked" {...locked("Dados")}>
-                        <button disabled>Dados 🔒</button>
+                        <button disabled={true}>Dados 🔒</button>
                         <small>Relatórios e métricas — em breve</small>
                     </div>
                 </div>

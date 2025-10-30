@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import * as ingredienteService from "../services/ingredientService";
-import type { Ingrediente } from "../services/ingredienteService";
+import React from "react";
+
+
 
 
 const TelaIngrediente: React.FC = () => {
-  const [ingrediente, setIngrediente] = useState<Ingrediente | null>(null);
+ 
 
   return (
     <div>

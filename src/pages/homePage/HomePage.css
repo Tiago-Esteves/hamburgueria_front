@@ -8,46 +8,14 @@
 }
 
 .home-page {
-  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
   color: var(--accent-contrast);
-  padding: 20px;
   box-sizing: border-box;
-  gap: 20px;
-}
-
-.home-page h1 {
-    font-size: 60px;
-    margin-bottom: px;
-    position: absolute;
-    top: 60px;
-}
-
-.botoes-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 20px;
-}
-
-/* header */
-.home-header .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.logo {
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, var(--accent), #4b53ff);
-  box-shadow: 0 6px 18px rgba(100,108,255,0.18);
+  
 }
 
 /* main */
@@ -55,10 +23,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   margin: 0 auto;
   max-width: 1100px;
   width: 100%;
+  height: 100vh;
+  
 }
 
 .welcome {
@@ -76,9 +47,10 @@
 /* grid of actions */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: 200px;
   gap: var(--gap);
-  width: 100%;
+  width: 100%; /* ocupar toda a largura disponível */
   margin-top: 8px;
 }
 
@@ -96,6 +68,13 @@
   text-align: center;
   border: 1px solid rgba(255,255,255,0.03);
 }
+
+.botoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+} 
 
 .action-card button {
   background: linear-gradient(180deg, var(--accent), #4b53ff);
@@ -129,6 +108,25 @@
   opacity: 0.6;
 }
 
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 /* footer */
 .home-footer {
   margin-top: auto;
@@ -139,12 +137,17 @@
 /* responsive */
 @media (max-width: 980px) {
   .home-grid { grid-template-columns: repeat(2, 1fr); }
-  .welcome { font-size: 1.6rem; }
+  .welcome { 
+    font-size: 1.6rem; 
+    padding-top: 60px;
+    }
 }
 
 @media (max-width: 640px) {
   .home-grid { grid-template-columns: 1fr; }
-  .home-main { padding: 0 8px; }
+  .home-main { 
+    padding:  0px 8px ; 
+}
   .logo { width: 48px; height: 48px; font-size: 24px; }
   .action-card { padding: 14px; border-radius: 10px; }
   .action-card button { padding: 12px; font-size: 1rem; }

@@ -1,0 +1,109 @@
+.sidebar{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    bottom: 20px;
+    margin: 0 20px;
+    border-radius: 14px;
+    width: 56px;
+    height: 90vh;
+    background: rgb(0 0 0 / 12%);
+    backdrop-filter: blur(10px);
+    transition: width 0.45s;
+
+}
+
+.sidebar button{
+    border: 0;
+    background: transparent;
+}
+
+.sidebar.open {
+    width: 200px;
+}
+
+.sidebar .inner {
+    position: absolute;
+    inset: 0;
+}
+
+.sidebar header {
+    display:  flex;
+    align-items: center;
+    height: 64px;
+}
+
+.sidebar-burguer {
+    width: 44px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    color: #f9f9f9
+}
+
+.sidebar nav {
+    flex: 1 1 auto;
+    display: grid;
+    padding: 0 6px;
+    gap: 2px;
+}
+
+.sidebar nav button:hover {
+    background-color: rgb(255 255 255 / 6%);
+    opacity: 1;
+}
+
+.sidebar nav button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 44px;
+    width: 44px;
+    line-height: 1;
+    padding: 0 12px;
+    border-radius: 8px;
+    color: #f9f9f9;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar:not(.open) nav button:hover p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    height: 8px;
+    width: 8px;
+    translate: 0 50%;
+    border-radius: 1px;
+    background: inherit;
+}
+
+
+.sidebar nav button p {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s;
+}
+
+.sidebar.open 
+:is(nav button p, header span) {
+    opacity: 1;
+}
+
+.sidebar.open nav button {
+    width: 100%;
+}
+
+.sidebar:not(.open) nav button:hover p {
+    position: relative;
+    opacity: 1;
+    background: #121113;
+    padding: 8px 12px;
+    border-radius: 6px;
+    translate: 16px 0;
+}
+
+
+
+

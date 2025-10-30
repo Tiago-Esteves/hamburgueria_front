@@ -1,10 +1,10 @@
 
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import ProdutoComponent from './components/ProdutoComponent'
 import HomePage from './pages/homePage/HomePage'
-import ListProdutosPage from './pages/ListProdutosPage'
-import ProdutoPage from './pages/ProdutoPage'
-import ListIngredientesPage from './pages/ListIngredientesPage'
+import ListIngredientesPage from './pages/listPages/ListIngredientesPage'
+import ListProdutosPage from './pages/listPages/ListProdutosPage'
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/produto/:id" element={<ProdutoPage />}/>
+        <Route path="/produto/:id" element={<ProdutoComponent />}/>
         <Route path='produtos' element={<ListProdutosPage />}/>
         <Route path="/ingredientes" element={<ListIngredientesPage />}/>
         <Route path="/home" element={<HomePage />}/>

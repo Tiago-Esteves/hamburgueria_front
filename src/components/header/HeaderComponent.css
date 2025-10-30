@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --header-icon-size: 44px; /* tamanho padrão (mesma medida do menu) */
+    --header-icon-size-mobile: 40px;
+}
+
+.home-page h1 {
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 55px;
+}
+
+.home-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 1000;
+
+    /* fundo semi-transparente + leve blur para efeito de overlay elegante */
+    background: linear-gradient(90deg, rgba(15, 23, 36, 0.88) 0%, rgba(23, 24, 38, 0.88) 60%, rgba(100, 108, 255, 0.12) 100%);
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 18px rgba(2, 6, 23, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+    /* use padding em vez de height para conteúdo responsivo */
+    padding: 12px 0;
+}
+
+
+/* header */
+.home-header .brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 100%;
+    gap: 12px;
+    padding: 0 16px;
+    width: 100%;
+
+
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.logo {
+    width: var(--header-icon-size);
+    height: var(--header-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    border-radius: 50%;        /* torna redondo */
+    background: inherit;       /* utiliza o mesmo fundo do header */
+    box-shadow: 0 6px 18px rgba(100,108,255,0.18);
+    overflow: hidden;
+}
+
+.logo button:hover {
+    background-color: rgba(100, 108, 255, 0.1);
+}
+
+/* mobile: reduzir altura do header e ajustar logo */
+@media (max-width: 720px) {
+
+    .home-header {
+        height: 80px;
+        /* altura menor para mobile */
+        padding: 8px 0px;
+        /* espaçamento interno */
+        
+    }
+    .home-header h1 {
+        font-size: 46px;
+    }
+
+    .home-header .brand {
+        gap: 8px;
+    }
+
+    .home-header .logo {
+        width: var(--header-icon-size-mobile);
+        height: var(--header-icon-size-mobile);
+        font-size: 20px;
+    }
+
+    /* evita que o conteúdo principal fique coberto pelo header */
+    .home-main {
+        padding-top: calc(var(--header-icon-size-mobile) + 24px);
+        /* ajustar se mudar a height acima */
+    }
+}

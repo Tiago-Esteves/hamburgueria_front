@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./Criar.css";
+import "../pages/homePage/HomePage.css"; // <-- para usar .btn-primary etc.
 import * as produtoService from "../services/produtoService";
 import * as ingredienteService from '../services/ingredienteService';
 import type { Produto } from "../services/produtoService";
@@ -62,7 +63,12 @@ const CriarProdutoComponent: React.FC<{ onClose: () => void, onCreated: () => vo
 
     return (
         <div className="form-container">
-            <h2>Criar Produto</h2>
+            <header className="brand" style={{ marginBottom: 12 }}>
+                <div className="logo" style={{ width: 36, height: 36, fontSize: 18 }}>🍔</div>
+                <div style={{ marginLeft: 8 }}>
+                    <h2 style={{ margin: 0 }}>Criar Produto</h2>
+                </div>
+            </header>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="nome">Nome:</label>
@@ -124,13 +130,13 @@ const CriarProdutoComponent: React.FC<{ onClose: () => void, onCreated: () => vo
                         })}
                     </div>
                 </div>
-                <div>
+                <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
+                    <button className="btn-primary" type="submit">Criar</button>
+                    <button type="button" onClick={onClose}>Cancelar</button>
                 </div>
-                <button type="submit">Criar</button>
-                <button type="button" onClick={onClose}>Cancelar</button>
-            </form>
-        </div>
-    );
+             </form>
+         </div>
+     );
 };
 
 export default CriarProdutoComponent;
