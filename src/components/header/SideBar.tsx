@@ -15,7 +15,7 @@ const SideBar: React.FC = () => {
     const navigate = useNavigate();
 
     return (
-        <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <aside className={`sidebar ${isOpen ? 'open' : 'false'}`}>
             <div className="inner">
                 <header>
                     <button onClick={() => setIsOpen(!isOpen)}><span>{isOpen ? "X" : "☰"}</span></button>           
