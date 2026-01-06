@@ -1,8 +1,8 @@
 import React from "react";
 import "./Criar.css";
-import "../pages/homePage/HomePage.css"; // <-- para estilos de botão
-import * as ingredienteService from '../services/ingredienteService';
-import type { Ingrediente } from "../services/ingredienteService";
+import "../../pages/homePage/HomePage.css"; // <-- para estilos de botão
+import * as ingredienteService from '../../services/ingredienteService';
+import type { Ingrediente } from "../../services/ingredienteService";
 
 const CriarIngredienteComponent: React.FC<{ onClose: () => void, onCreated: () => void }> = ({ onClose, onCreated }) => {
     const [nome, setNome] = React.useState("");

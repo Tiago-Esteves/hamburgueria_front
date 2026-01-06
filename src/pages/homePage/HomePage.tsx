@@ -36,8 +36,8 @@ const HomePage: React.FC = () => {
                         <small>Gerenciar produtos e composições</small>
                     </div>
 
-                    <div className="action-card locked" {...locked("Pedidos")}>
-                        <button disabled>Pedidos 🔒</button>
+                    <div className="action-card">
+                        <button onClick={() => navigate("/pedidos")}>Pedidos</button>
                         <small>Funcionalidade em desenvolvimento</small>
                     </div>
 

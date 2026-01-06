@@ -5,7 +5,7 @@
     --header-icon-size-mobile: 40px;
 }
 
-.home-page h1 {
+h1 {
     font-family: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: 600;
     font-size: 55px;

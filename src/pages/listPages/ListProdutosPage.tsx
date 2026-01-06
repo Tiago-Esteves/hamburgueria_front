@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import CriarProdutoComponent from "../../components/CriarProdutoComponent";
-import ProdutoComponent from "../../components/ProdutoComponent";
+import CriarProdutoComponent from "../../components/Create/CriarProdutoComponent";
+import ProdutoComponent from "../../components/Entidade/ProdutoComponent";
 import HeaderComponent from "../../components/header/HeaderComponent";
 import "../homePage/HomePage.css"; // <-- aplicar estilo da home
 import type { Produto } from "../../services/produtoService";

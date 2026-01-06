@@ -1,18 +1,25 @@
 :root {
+  /* Theme tokens (globais) */
+  --bg: #121212;
+  --card: #1f1f1f;
+  --muted: #bdbdbd;
+  --accent: #646cff;
+  --accent-contrast: #fff;
+  --gap: 16px;
+
+  /* ...existing code... */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
+/* ...existing code... */
 html, body, #root {
   height: 100%;
   width: 100%;
